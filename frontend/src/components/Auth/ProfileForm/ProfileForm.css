@@ -1,0 +1,81 @@
+.profile-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  font-family: 'Gilroy';
+  padding: 20px;
+}
+
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.profile-form .form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-form .form-row .form-group {
+  width: 50%;
+}
+
+.profile-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.profile-form input,
+.profile-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+  border-color: #e94a46;
+  outline: none;
+
+}
+
+.profile-form .bonus-display {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffd149;
+}
+
+.profile-form button {
+  max-width: 600px;
+  padding: 12px;
+  border: none;
+  background: #e94a46;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-form button:hover {
+  background: #f08b2d;
+}
+
+
+@media (max-width: 991px) {
+  .profile-form .form-row {
+    display: block;
+    gap: 20px;
+  }
+  
+  .profile-form .form-row .form-group  {
+    width: 100%;
+  }
+}

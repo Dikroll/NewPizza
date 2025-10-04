@@ -1,0 +1,137 @@
+.order-list {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    font-family: 'Gilroy', sans-serif;
+    background: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+}
+
+.order-item {
+    border-radius: 24px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background: #fff;
+}
+
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: background 0.3s ease;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.order-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.order-info h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.order-info p {
+    margin: 3px 0;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.order-summary span:last-child {
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.order-details {
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.order-details h3 {
+    margin: 8px 0 4px;
+    font-size: 14px;
+    color: #000;
+}
+
+.order-items {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.order-id{
+    font-weight: 600;
+    color:  #000;
+}
+
+.order-product {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.order-product:last-child {
+    border-bottom: none;
+}
+
+.no-orders {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.show-more-btn {
+
+    max-width: 400px;
+    padding: 10px;
+    background: #e94a46;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 24px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.show-more-btn:hover {
+    background: #f08b2d;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

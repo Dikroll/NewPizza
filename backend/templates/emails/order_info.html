@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение заказа</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .receipt {
+            background: #fff;
+            padding: 20px;
+            width: 320px;
+            border: 1px solid #ddd;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border-bottom: 1px dashed #000;
+            padding: 8px;
+            text-align: left;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        .total {
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <h1>Спасибо за ваш заказ!</h1>
+        <p>Номер вашего заказа: <strong>{{ order.id }}</strong></p>
+        <p>Дата заказа: <strong>{{ order.created_at }}</strong></p>
+
+        <h2>Детали заказа:</h2>
+        <ul>
+            <li>Имя: {{ order.name }}</li>
+            <li>Телефон: {{ order.phone }}</li>
+            <li>Адрес: {{ order.address }}</li>
+            <li>Квартира: {{ order.apartment }}</li>
+            <li>Подъезд: {{ order.entrance }}</li>
+            <li>Этаж: {{ order.floor }}</li>
+            <li>Комментарий: {{ order.comment }}</li>
+            <li>Способ оплаты: {{ order.payment_method }}</li>
+        </ul>
+
+        <h2>Товары:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Размер</th>
+                    <th>Кол-во</th>
+                    <th>Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.size.size }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.size.price }} руб.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p class="total">Итого: {{ order.summary }} руб.</p>
+        
+        <p style="text-align: center;">С любовью,<br>Ваш Дымок</p>
+    </div>
+</body>
+</html>

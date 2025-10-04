@@ -1,0 +1,46 @@
+
+.contact-page {
+  display: flex; 
+  justify-content: space-between; 
+  height: 100vh; 
+  background-color: #fafafa;
+}
+
+.contact-content {
+  flex: 1; 
+  background-color: #fafafa;
+  height: 100%; 
+  overflow-y: auto; 
+}
+
+.contact-map {
+  flex: 1; 
+  height: 100%; 
+  padding: 0; 
+  position: relative; 
+}
+
+.contact-map .leaflet-container {
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    flex-direction: column; 
+    height: auto; 
+    min-height: 100vh;
+  }
+
+  .contact-content {
+    flex: 0 0 auto; 
+    padding: 15px; 
+    margin: 0; /
+    height: auto;
+  }
+
+  .contact-map {
+    flex: 0 0 350px; /
+    width: 100%;
+    order: 2;
+  }
+}

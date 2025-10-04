@@ -1,0 +1,127 @@
+
+.login-container {
+    display: flex;
+    margin-top:100px ;
+    margin-bottom: 100px;
+    justify-content: center;
+    max-height: 700px;
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+
+  .login-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .login-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+  }
+  
+
+  .login-image:hover img {
+    transform: translateY(-10px);
+  }
+  
+  /* Контейнер для формы */
+  .login-card {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Кнопка */
+  .login-button {
+    width: 100%;
+    background: #FF5733;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 30px;
+  }
+  
+  .login-button:hover {
+    background: #45a049;
+  }
+  
+  /* Текстовые ссылки */
+  .forgot-password,
+  .register-text {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    padding-top: 20px;
+  }
+  
+  .register-text:hover {
+    color: #333;
+  }
+  
+
+  @media (max-width: 991px) {
+    .login-container {
+      flex-direction: column;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+      .login-image {
+      display: none;
+    }
+
+    .login-wrapper {
+      max-width: 1000px;
+      padding: 0px;
+    }
+  }
