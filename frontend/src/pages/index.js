@@ -1,0 +1,5 @@
+export * from '@/pages/CartPage/CartPage'
+export * from '@/pages/ContactPage/ContactPage'
+export * from '@/pages/HomePage/HomePage'
+export * from '@/pages/NotFoundPage/NotFoundPage'
+export * from '@/pages/ProductPage/ProductPage'
