@@ -4,7 +4,7 @@ import {
 	logout,
 	refresh_token,
 	register,
-} from '@/api/DataFetch'
+} from '@/shared/api'
 import { createContext, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 

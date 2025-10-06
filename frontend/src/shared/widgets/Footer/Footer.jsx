@@ -1,4 +1,4 @@
-import ScrollToCategory from '@/utils/scrollToCategory'
+import ScrollToCategory from '@/shared/lib/utils/scrollToCategory'
 
 export const Footer = ({ categories }) => {
 	const scrollToCategory = ScrollToCategory()

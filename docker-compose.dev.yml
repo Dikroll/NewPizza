@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    networks:
+      - dev_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend_dev
+    command: bash -c "/entrypoint.sh && python manage.py runserver 0.0.0.0:${DJANGO_PORT}"
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - media_volume:/app/media
+    ports:
+      - "${DJANGO_PORT}:${DJANGO_PORT}"
+    env_file:
+      - .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings.dev
+      - DOCKER_ENV=true
+      - POSTGRES_HOST=db
+    networks:
+      - dev_network
+
+  frontend:
+    build:
+      context: ./frontend
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ./frontend:/app
+      - web_node_modules:/app/node_modules
+    ports:
+      - "${VITE_PORT}:5173"
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=development
+volumes:
+  web_node_modules:
+  media_volume:
+  postgres_data:
+
+networks:
+  dev_network:
+    driver: bridge

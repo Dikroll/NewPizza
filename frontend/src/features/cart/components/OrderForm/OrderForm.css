@@ -1,0 +1,124 @@
+input[type="radio"] {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 6px;  
+    height: 6px;
+    border: 2px solid #000; 
+    border-radius: 50%;  
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    background-color: #fff; 
+}
+
+input[type="radio"]:checked {
+    background-color: #e94a46; 
+}
+
+input[type="radio"]:checked::before {
+    content: ""; 
+    position: absolute;
+    width: 6px;  
+    height: 6px;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gilroy';
+    gap: 15px;
+    box-shadow: 4px 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    background: #fff;
+    max-width: 800px;
+    margin: auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form label {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.order-form h3 {
+    font-weight: 600;
+}
+
+.order-form input,
+.order-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+  border-color: #e94a46; 
+  outline: none; 
+}
+
+.fixed-textarea {
+    resize: none;
+    height: 120px;
+}
+.payment-options {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    appearance: none;
+}
+
+.payment-options input {
+    margin: 0;
+    transform: scale(1);
+
+    cursor: pointer;
+}
+
+.submit-button{
+    background: #e94a46;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 24px;
+    cursor: pointer;
+    width: 210px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .submit-button:hover {
+    background-color: #f08b2d;
+  }

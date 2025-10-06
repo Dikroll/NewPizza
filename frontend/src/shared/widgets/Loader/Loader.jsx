@@ -1,4 +1,4 @@
-import animation from '@/assets/animations/Mainscene.json'
+import animation from '@/shared/assets/animations/Mainscene.json'
 import Lottie from 'react-lottie'
 
 export const Loader = () => {
